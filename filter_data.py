@@ -74,11 +74,15 @@ DATA = [
 def run():
     all_python_devs = [worker['name'] for worker in DATA if worker['language'] == 'python'] 
     all_python_workers = [worker['name'] for worker in DATA if worker['organization'] == 'Platzi']
-    adults = list(filter(lambda worker: worker['age'] > 18, DATA))
+    adults = list(filter(lambda worker: worker['age'] > 18, DATA)) #Va a traer todos los diccionarios
+    adults = list(map(lambda worker: worker['name'], adults))#solo retorna el name
+    old_people = list(map(lambda worker: worker | {'old': worker['age'] > 70}, DATA))
     
     #Ahora que ya tenemos la lista hacemos un ciclo para imprimirlo
-    for worker in adults:
+    for worker in old_people:
         print(worker)
 
 if __name__ == '__main__':
     run()
+    
+    
