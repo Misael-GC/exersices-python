@@ -72,11 +72,12 @@ DATA = [
 ]
 
 def run():
-    all_python_devs = [worker['name'] for worker in DATA if worker['language'] == 'python'] #trabajadores de python, worker es cada uno de los diccionarios internos, name es su contenido
-    #para todos los trabajadores que están en DATA, vamos a guardar solo el contenido de la variable nombre, solo si worker  domina el lenguaje python
+    all_python_devs = [worker['name'] for worker in DATA if worker['language'] == 'python'] 
+    all_python_workers = [worker['name'] for worker in DATA if worker['organization'] == 'Platzi']
+    adults = list(filter(lambda worker: worker['age'] > 18, DATA))
     
     #Ahora que ya tenemos la lista hacemos un ciclo para imprimirlo
-    for worker in all_python_devs:
+    for worker in all_python_workers:
         print(worker)
 
 if __name__ == '__main__':
