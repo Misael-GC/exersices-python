@@ -78,11 +78,11 @@ def run():
     # all_python_devs = list(map(lambda worker: worker['name'], all_python_devs))
     #all_python_workers = list(filter(lambda worker: worker['organization'] == 'Platzi',DATA))
     #all_python_workers = list(map(lambda worker: worker['name'], all_python_workers))
-    adults = [worker['name'] for worker in DATA if worker['age'] > 18]
+    old_people = [worker | {'old': worker['age'] > 70} for worker in DATA if worker['age'] > 18]
     
     
     #Ahora que ya tenemos la lista hacemos un ciclo para imprimirlo
-    for worker in adults:
+    for worker in old_people:
         print(worker)
 
 if __name__ == '__main__':
