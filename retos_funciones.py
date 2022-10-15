@@ -76,13 +76,13 @@ def run():
     #all_python_devs = [worker['name'] for worker in DATA if worker['language'] == 'python'] 
     # all_python_devs = list(filter(lambda worker: worker['language'] == 'python',DATA))
     # all_python_devs = list(map(lambda worker: worker['name'], all_python_devs))
-    all_python_workers = list(filter(lambda worker: worker['organization'] == 'Platzi',DATA))
-    all_python_workers = list(map(lambda worker: worker['name'], all_python_workers))
-    
+    #all_python_workers = list(filter(lambda worker: worker['organization'] == 'Platzi',DATA))
+    #all_python_workers = list(map(lambda worker: worker['name'], all_python_workers))
+    adults = [worker['name'] for worker in DATA if worker['age'] > 18]
     
     
     #Ahora que ya tenemos la lista hacemos un ciclo para imprimirlo
-    for worker in all_python_workers:
+    for worker in adults:
         print(worker)
 
 if __name__ == '__main__':
