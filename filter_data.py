@@ -77,7 +77,7 @@ def run():
     adults = list(filter(lambda worker: worker['age'] > 18, DATA))
     
     #Ahora que ya tenemos la lista hacemos un ciclo para imprimirlo
-    for worker in all_python_workers:
+    for worker in adults:
         print(worker)
 
 if __name__ == '__main__':
